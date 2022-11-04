@@ -13,6 +13,7 @@
 		9242BC9229150B950005E53A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9242BC9029150B950005E53A /* Main.storyboard */; };
 		9242BC9429150B950005E53A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9242BC9329150B950005E53A /* Assets.xcassets */; };
 		9242BC9729150B950005E53A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9242BC9529150B950005E53A /* LaunchScreen.storyboard */; };
+		9242BC9F29150CE70005E53A /* Coronavirus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9242BC9E29150CE70005E53A /* Coronavirus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		9242BC9329150B950005E53A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9242BC9629150B950005E53A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9242BC9829150B950005E53A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9242BC9E29150CE70005E53A /* Coronavirus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coronavirus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,56 @@
 		9242BC8929150B950005E53A /* NetworkApplication */ = {
 			isa = PBXGroup;
 			children = (
-				9242BC8A29150B950005E53A /* AppDelegate.swift */,
-				9242BC8C29150B950005E53A /* SceneDelegate.swift */,
-				9242BC8E29150B950005E53A /* ViewController.swift */,
-				9242BC9029150B950005E53A /* Main.storyboard */,
-				9242BC9329150B950005E53A /* Assets.xcassets */,
-				9242BC9529150B950005E53A /* LaunchScreen.storyboard */,
-				9242BC9829150B950005E53A /* Info.plist */,
+				9242BCA4291522D40005E53A /* SupportingFiles */,
+				9242BCA3291522BA0005E53A /* Resources */,
+				9242BCA2291522980005E53A /* StoryBoards */,
+				9242BCA1291522890005E53A /* Models */,
+				9242BCA0291522800005E53A /* ViewControllers */,
 			);
 			path = NetworkApplication;
+			sourceTree = "<group>";
+		};
+		9242BCA0291522800005E53A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9242BC8E29150B950005E53A /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9242BCA1291522890005E53A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9242BC9E29150CE70005E53A /* Coronavirus.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9242BCA2291522980005E53A /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				9242BC9529150B950005E53A /* LaunchScreen.storyboard */,
+				9242BC9029150B950005E53A /* Main.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		9242BCA3291522BA0005E53A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9242BC9329150B950005E53A /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9242BCA4291522D40005E53A /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				9242BC8A29150B950005E53A /* AppDelegate.swift */,
+				9242BC8C29150B950005E53A /* SceneDelegate.swift */,
+				9242BC9829150B950005E53A /* Info.plist */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9242BC9F29150CE70005E53A /* Coronavirus.swift in Sources */,
 				9242BC8F29150B950005E53A /* ViewController.swift in Sources */,
 				9242BC8B29150B950005E53A /* AppDelegate.swift in Sources */,
 				9242BC8D29150B950005E53A /* SceneDelegate.swift in Sources */,
@@ -289,12 +333,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R79LXPU844;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NetworkApplication/Info.plist;
+				INFOPLIST_FILE = NetworkApplication/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,9 +346,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Balandin-Denis.NetworkApplication";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -317,12 +364,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R79LXPU844;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NetworkApplication/Info.plist;
+				INFOPLIST_FILE = NetworkApplication/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,9 +377,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Balandin-Denis.NetworkApplication";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
