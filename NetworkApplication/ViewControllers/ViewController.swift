@@ -16,10 +16,10 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getCOVIDStatistics()
+        fetchCOVIDStatistics()
     }
     
-    private func getCOVIDStatistics() {
+    private func fetchCOVIDStatistics() {
         guard let url = URL(string: Links.covidURL.rawValue) else { return }
         
         URLSession.shared.dataTask(with: url) {data, _, error in
