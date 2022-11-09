@@ -6,28 +6,55 @@
 //
 
 struct Coronavirus: Decodable {
-    let Global: Information
-    let Countries: [Country]
+    let global: Information
+    let countries: [Country]
+    
+    enum CodingKeys: String, CodingKey {
+        case global = "Global"
+        case countries = "Countries"
+    }
 }
 
 struct Information: Decodable {
-    let NewConfirmed: Int
-    let TotalConfirmed: Int
-    let NewDeaths: Int
-    let TotalDeaths: Int
-    let NewRecovered: Int
-    let TotalRecovered: Int
+    let newConfirmed: Int
+    let totalConfirmed: Int
+    let newDeaths: Int
+    let totalDeaths: Int
+    let newRecovered: Int
+    let totalRecovered: Int
+    
+    enum CodingKeys: String, CodingKey, CaseIterable {
+        case newConfirmed = "NewConfirmed"
+        case totalConfirmed = "TotalConfirmed"
+        case newDeaths = "NewDeaths"
+        case totalDeaths = "TotalDeaths"
+        case newRecovered = "NewRecovered"
+        case totalRecovered = "TotalRecovered"
+    }
 }
 
 struct Country: Decodable {
-    let Country: String
-    let CountryCode: String
-    let Slug: String
-    let NewConfirmed: Int
-    let TotalConfirmed: Int
-    let NewDeaths: Int
-    let TotalDeaths: Int
-    let NewRecovered: Int
-    let TotalRecovered: Int
-    let Date: String
+    let country: String
+    let countryCode: String
+    let slug: String
+    let newConfirmed: Int
+    let totalConfirmed: Int
+    let newDeaths: Int
+    let totalDeaths: Int
+    let newRecovered: Int
+    let totalRecovered: Int
+    let date: String
+    
+    enum CodingKeys: String, CodingKey {
+        case country = "Country"
+        case countryCode = "CountryCode"
+        case slug = "Slug"
+        case newConfirmed = "NewConfirmed"
+        case totalConfirmed = "TotalConfirmed"
+        case newDeaths = "NewDeaths"
+        case totalDeaths = "TotalDeaths"
+        case newRecovered = "NewRecovered"
+        case totalRecovered = "TotalRecovered"
+        case date = "Date"
+    }
 }
