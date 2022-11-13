@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 enum NetworkError: Error {
     case invalidURL
@@ -22,26 +23,19 @@ final class NetworkManager {
     
     private init() {}
     
-    func fetchCOVIDStatistics(from url: String, completion: @escaping (Result<Coronavirus, NetworkError>) -> Void) {
-        guard let url = URL(string: url) else {
-            completion(.failure(.invalidURL))
-            return
-        }
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                completion(.failure(.noData))
-                print(error?.localizedDescription ?? "No error description")
-                return
-            }
-            do {
-                let statistics = try JSONDecoder().decode(Coronavirus.self, from: data)
-                DispatchQueue.main.async {
-                    completion(.success(statistics))
+    func fetchCOVIDStatistics(
+        from url: String,
+        completion: @escaping(Result<Coronavirus, AFError>) -> Void) {
+            AF.request(url)
+                .validate()
+                .responseJSON { dataResponse in
+                    switch dataResponse.result {
+                    case .success(let value):
+                        let covid = Coronavirus.getCOVIDStatistics(from: value)
+                        completion(.success(covid))
+                    case .failure(let error):
+                        completion(.failure(error))
+                    }
                 }
-            }
-            catch let error {
-                print(error.localizedDescription)
-            }
-        }.resume()
-    }
+        }
 }

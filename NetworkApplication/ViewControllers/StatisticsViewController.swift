@@ -27,26 +27,11 @@ extension StatisticsViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as? GlobalStatisticsCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! GlobalStatisticsCell
         
         let statistics = globalStatistics[indexPath.item]
+        cell.fetchCOVIDStatistics(from: Link.covidURL.rawValue, cell: statistics)
         
-        switch statistics {
-            
-        case .newConfirmed:
-            cell?.fetchCOVIDStatistics(from: Link.covidURL.rawValue, cell: statistics)
-        case .totalConfirmed:
-            cell?.fetchCOVIDStatistics(from: Link.covidURL.rawValue, cell: statistics)
-        case .newDeaths:
-            cell?.fetchCOVIDStatistics(from: Link.covidURL.rawValue, cell: statistics)
-        case .totalDeaths:
-            cell?.fetchCOVIDStatistics(from: Link.covidURL.rawValue, cell: statistics)
-        case .newRecovered:
-            cell?.fetchCOVIDStatistics(from: Link.covidURL.rawValue, cell: statistics)
-        case .totalRecovered:
-            cell?.fetchCOVIDStatistics(from: Link.covidURL.rawValue, cell: statistics)
-        }
-        
-        return cell!
+        return cell
     }
 }

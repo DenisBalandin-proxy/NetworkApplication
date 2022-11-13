@@ -21,20 +21,20 @@ final class GlobalStatisticsCell: UICollectionViewCell {
         NetworkManager.shared.fetchCOVIDStatistics(from: url) { [weak self] result in
             switch result {
             case .success(let coronavirus):
-                switch cell {
-                case .newConfirmed:
-                    self?.statistics.text = String(coronavirus.global.newConfirmed)
-                case .totalConfirmed:
-                    self?.statistics.text = String(coronavirus.global.totalConfirmed)
-                case .newDeaths:
-                    self?.statistics.text = String(coronavirus.global.newDeaths)
-                case .totalDeaths:
-                    self?.statistics.text = String(coronavirus.global.totalDeaths)
-                case .newRecovered:
-                    self?.statistics.text = String(coronavirus.global.newRecovered)
-                case .totalRecovered:
-                    self?.statistics.text = String(coronavirus.global.totalRecovered)
-                }
+                    switch cell {
+                    case .newConfirmed:
+                        self?.statistics.text = String(coronavirus.global.newConfirmed)
+                    case .totalConfirmed:
+                        self?.statistics.text = String(coronavirus.global.totalConfirmed)
+                    case .newDeaths:
+                        self?.statistics.text = String(coronavirus.global.newDeaths)
+                    case .totalDeaths:
+                        self?.statistics.text = String(coronavirus.global.totalDeaths)
+                    case .newRecovered:
+                        self?.statistics.text = String(coronavirus.global.newRecovered)
+                    case .totalRecovered:
+                        self?.statistics.text = String(coronavirus.global.totalRecovered)
+                    }
             case .failure(let error):
                 print(error.localizedDescription)
             }
